@@ -2,24 +2,24 @@
 class DepscloudCli < Formula
   desc "Command line interface to the deps.cloud API."
   homepage "https://deps.cloud/"
-  version "0.0.10"
+  version "0.0.11"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/deps-cloud/cli/releases/download/v0.0.10/deps_0.0.10_darwin_amd64.tar.gz", :using => CurlDownloadStrategy.
-    sha256 "e1243020308ec6b6f274dccd5a5d8c0a351b25ceb31a7dfb64d38cb1cd19a915"
+    url "https://github.com/deps-cloud/cli/releases/download/v0.0.11/deps_0.0.11_darwin_amd64.tar.gz"
+    sha256 "a4509ecb3d948e5189e2c758e83e495a75bb88103f2b6590b6bf34d76d78bb3c"
   elsif OS.linux?
     if Hardware::CPU.intel?
-      url "https://github.com/deps-cloud/cli/releases/download/v0.0.10/deps_0.0.10_linux_amd64.tar.gz", :using => CurlDownloadStrategy.
-      sha256 "c5ebd965f8ab6276b3ae440d9293c7d7b05796b1d20bd306872a3a6850958df0"
+      url "https://github.com/deps-cloud/cli/releases/download/v0.0.11/deps_0.0.11_linux_amd64.tar.gz"
+      sha256 "14befad0c0e0dbac73c84120c1078ac253cd67fa0772f4be4a559c61f232a24f"
     end
     if Hardware::CPU.arm?
       if Hardware::CPU.is_64_bit?
-        url "https://github.com/deps-cloud/cli/releases/download/v0.0.10/deps_0.0.10_linux_arm64.tar.gz", :using => CurlDownloadStrategy.
-        sha256 "4748301b98e0bbbb47914a1d8f907c68f8e7b8a789e38f1445057643829b72e8"
+        url "https://github.com/deps-cloud/cli/releases/download/v0.0.11/deps_0.0.11_linux_arm64.tar.gz"
+        sha256 "679477364fe93682d48eb85ee0db4ca39766f8bd86eb7ac566c69b84e03598b6"
       else
-        url "https://github.com/deps-cloud/cli/releases/download/v0.0.10/deps_0.0.10_linux_armv7.tar.gz", :using => CurlDownloadStrategy.
-        sha256 "4ceafd2c739ecae09bd55aa354a914ea6d8e7978acbbcb3c4f2073d99c9ff9dd"
+        url "https://github.com/deps-cloud/cli/releases/download/v0.0.11/deps_0.0.11_linux_armv7.tar.gz"
+        sha256 "35af1a08c26768f75b46feb882d24b43f8a665e9d9fe762885d3fe0bb03ae461"
       end
     end
   end
