@@ -2,26 +2,24 @@
 class DepscloudCli < Formula
   desc "Command line interface to the deps.cloud API"
   homepage "https://deps.cloud/"
-  version "0.2.32"
+  version "0.2.33"
   bottle :unneeded
 
   if OS.mac?
-    url "https://github.com/depscloud/depscloud/releases/download/v0.2.32/deps_0.2.32_darwin_amd64.tar.gz"
-    sha256 "8b5faf28c80e31ab21ef1c026d8f7adf85d58843d9bfa7a25862d636c20bec07"
-  elsif OS.linux?
-    if Hardware::CPU.intel?
-      url "https://github.com/depscloud/depscloud/releases/download/v0.2.32/deps_0.2.32_linux_amd64.tar.gz"
-      sha256 "f8599910e78197127b65422dde1cb615ae8d44b9731c8a979ebba8e6003816e2"
-    end
-    if Hardware::CPU.arm?
-      if Hardware::CPU.is_64_bit?
-        url "https://github.com/depscloud/depscloud/releases/download/v0.2.32/deps_0.2.32_linux_arm64.tar.gz"
-        sha256 "5ca7affc235f2c96f01d0f153a0560f867e2c3a4feafd4247a5ba4aca9b9bdb6"
-      else
-        url "https://github.com/depscloud/depscloud/releases/download/v0.2.32/deps_0.2.32_linux_armv7.tar.gz"
-        sha256 "4a1c621b8d19a2a6388237f051b576c825cb9539db6f9bfece2139531fe9e72b"
-      end
-    end
+    url "https://github.com/depscloud/depscloud/releases/download/v0.2.33/deps_0.2.33_darwin_amd64.tar.gz"
+    sha256 "dd9e74c4d560175bb01252a806602ff88be446cbebb8a7f46a0f756d464c5887"
+  end
+  if OS.linux? && Hardware::CPU.intel?
+    url "https://github.com/depscloud/depscloud/releases/download/v0.2.33/deps_0.2.33_linux_amd64.tar.gz"
+    sha256 "03c241b21ca6e75a3366fbdf52285f19918df74671d981f16855fe1b857b1221"
+  end
+  if OS.linux? && Hardware::CPU.arm? && !Hardware::CPU.is_64_bit?
+    url "https://github.com/depscloud/depscloud/releases/download/v0.2.33/deps_0.2.33_linux_armv7.tar.gz"
+    sha256 "f919c60fe264c605d6f0d1d75a747a251a40f58d5b2fa49faf6e354124f613de"
+  end
+  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+    url "https://github.com/depscloud/depscloud/releases/download/v0.2.33/deps_0.2.33_linux_arm64.tar.gz"
+    sha256 "bfb399dda86f8a63dae6be0b6ad394307d708b57bee480b0fbeda6fd2460a7b3"
   end
 
   def install
