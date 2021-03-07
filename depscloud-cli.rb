@@ -26,6 +26,6 @@ class DepscloudCli < Formula
   end
 
   def install
-    bin.install "depscloud"
+    bin.install "deps"
   end
 end
