@@ -9,7 +9,7 @@ class DepscloudCliAT02X < Formula
   version "0.2.34"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
+  if OS.mac?
     url "https://github.com/depscloud/depscloud/releases/download/v0.2.34/deps_0.2.34_darwin_amd64.tar.gz"
     sha256 "d855894fb708f0040f133531a380797e763c8de03d4231c97775604f12b9a1fe"
   end
