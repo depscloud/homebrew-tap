@@ -5,28 +5,28 @@
 class DepscloudCli < Formula
   desc "Command line interface to the deps.cloud API"
   homepage "https://deps.cloud/"
-  version "0.3.2"
+  version "0.3.3"
   bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/depscloud/depscloud/releases/download/v0.3.2/deps_0.3.2_darwin_amd64.tar.gz"
-      sha256 "31b23a3bfed47ebb2f327fc19f5f704bd7ec62874dba9ff0ce8c58cd3f7d0bf0"
+      url "https://github.com/depscloud/depscloud/releases/download/v0.3.3/deps_0.3.3_darwin_amd64.tar.gz"
+      sha256 "0baffa694eb4a3c9c00810aebb795a4e2ae6934b0d33b366c571c6510563ab8f"
     end
     if Hardware::CPU.arm?
-      url "https://github.com/depscloud/depscloud/releases/download/v0.3.2/deps_0.3.2_darwin_arm64.tar.gz"
-      sha256 "a8d7fea07ab2d7ae3cbd9dfd7c32750fff600cac0eba940892e9f085a7c72543"
+      url "https://github.com/depscloud/depscloud/releases/download/v0.3.3/deps_0.3.3_darwin_arm64.tar.gz"
+      sha256 "f5cc71925edb232aa5cc8dcd71e61f7c4d6510c07721199426b62aee1ff3688e"
     end
   end
 
   on_linux do
     if Hardware::CPU.intel?
-      url "https://github.com/depscloud/depscloud/releases/download/v0.3.2/deps_0.3.2_linux_amd64.tar.gz"
-      sha256 "e9491479db010f8c747c191b16ec008aaa79ab4c41a4bcc6297246c3f3f33b8a"
+      url "https://github.com/depscloud/depscloud/releases/download/v0.3.3/deps_0.3.3_linux_amd64.tar.gz"
+      sha256 "3043d766815d2daec2908e43604023ff758d1634084cae8a6b93be6c7216161b"
     end
     if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/depscloud/depscloud/releases/download/v0.3.2/deps_0.3.2_linux_arm64.tar.gz"
-      sha256 "e08457c596e50bc611a91aaf5f977e1b47fdeff98fdf130c17ada24f67145ead"
+      url "https://github.com/depscloud/depscloud/releases/download/v0.3.3/deps_0.3.3_linux_arm64.tar.gz"
+      sha256 "1af88fb87a08351a37d9da9ea438190236c87b972dce5b6a123e42b84691119a"
     end
   end
 
