@@ -5,24 +5,29 @@
 class DepscloudCli < Formula
   desc "Command line interface to the deps.cloud API"
   homepage "https://deps.cloud/"
-  version "0.3.1"
+  version "0.3.2"
   bottle :unneeded
 
-  if OS.mac? && Hardware::CPU.intel?
-    url "https://github.com/depscloud/depscloud/releases/download/v0.3.1/deps_0.3.1_darwin_amd64.tar.gz"
-    sha256 "f8aab7b42a06fd192378fa607bbe76a6748d9305eccadf6ce45986a514f48103"
+  on_macos do
+    if Hardware::CPU.intel?
+      url "https://github.com/depscloud/depscloud/releases/download/v0.3.2/deps_0.3.2_darwin_amd64.tar.gz"
+      sha256 "31b23a3bfed47ebb2f327fc19f5f704bd7ec62874dba9ff0ce8c58cd3f7d0bf0"
+    end
+    if Hardware::CPU.arm?
+      url "https://github.com/depscloud/depscloud/releases/download/v0.3.2/deps_0.3.2_darwin_arm64.tar.gz"
+      sha256 "a8d7fea07ab2d7ae3cbd9dfd7c32750fff600cac0eba940892e9f085a7c72543"
+    end
   end
-  if OS.mac? && Hardware::CPU.arm?
-    url "https://github.com/depscloud/depscloud/releases/download/v0.3.1/deps_0.3.1_darwin_arm64.tar.gz"
-    sha256 "36a062a23eefe563e1481719e4032814fc6bb6ebebf5be0d37b27100a80e2b0d"
-  end
-  if OS.linux? && Hardware::CPU.intel?
-    url "https://github.com/depscloud/depscloud/releases/download/v0.3.1/deps_0.3.1_linux_amd64.tar.gz"
-    sha256 "ce1dea220495fb565140ed6360511e3280414380847160c61b5a812caf739ded"
-  end
-  if OS.linux? && Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-    url "https://github.com/depscloud/depscloud/releases/download/v0.3.1/deps_0.3.1_linux_arm64.tar.gz"
-    sha256 "1f71d27946b636c93d2bd0c2d7de84779aeb179b95439049ea5bd64b19ca67a9"
+
+  on_linux do
+    if Hardware::CPU.intel?
+      url "https://github.com/depscloud/depscloud/releases/download/v0.3.2/deps_0.3.2_linux_amd64.tar.gz"
+      sha256 "e9491479db010f8c747c191b16ec008aaa79ab4c41a4bcc6297246c3f3f33b8a"
+    end
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/depscloud/depscloud/releases/download/v0.3.2/deps_0.3.2_linux_arm64.tar.gz"
+      sha256 "e08457c596e50bc611a91aaf5f977e1b47fdeff98fdf130c17ada24f67145ead"
+    end
   end
 
   def install
