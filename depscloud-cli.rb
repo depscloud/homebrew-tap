@@ -6,7 +6,6 @@ class DepscloudCli < Formula
   desc "Command line interface to the deps.cloud API"
   homepage "https://deps.cloud/"
   version "0.3.5"
-  bottle :unneeded
 
   on_macos do
     if Hardware::CPU.intel?
