@@ -7,7 +7,6 @@ class DepscloudCliAT02X < Formula
   desc "Command line interface to the deps.cloud API"
   homepage "https://deps.cloud/"
   version "0.2.34"
-  bottle :unneeded
 
   if OS.mac?
     url "https://github.com/depscloud/depscloud/releases/download/v0.2.34/deps_0.2.34_darwin_amd64.tar.gz"
